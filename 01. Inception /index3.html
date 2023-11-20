@@ -7,10 +7,16 @@
   </head>
   <body>
     <!-- Here, crossorigin means that this file can interact with the files from other domains as well.-->
+    <!-- These two js files contain React code that we we will be using in our project.Fcebook devs have written the React library. The first js file is the core file of react in which the react algo is written.-->
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
     ></script>
+    <!-- The second file is useful for DOM operations as we would need it for modifying the DOM of our website.-->
+
+    <!-- Why are there two different files and not a single one?-->
+    <!-- The first file is the core react file and the second one basically as the bridge between the core react and the 
+     different kind of browsers on which react will be used.-->
     <script
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
