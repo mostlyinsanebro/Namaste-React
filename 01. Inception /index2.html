@@ -1,0 +1,23 @@
+<!-- Write the hello world program by injecting html into js-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Here, what we are doing is that we are creating a node using doument.createElement and we are then
+      // adding HTML to that element using .innerHTML().
+      const html = document.createElement("h1");
+      html.innerHTML = "Hello World from JS!";
+
+      // After that, we are selecting the div element and then appending the h1 into it as it's child.
+      const root = document.getElementById("root");
+
+      root.appendChild(html);
+    </script>
+  </body>
+</html>
