@@ -1,8 +1,12 @@
 What is a CDN?
 
 CDN stands for content delivery network which is basically used for storing the static data of an application
-to the nearby Cache's of a user and then deliver the data to him faster and as per his location whenever the user tries to
+to the nearby Cache of a user and then deliver the data to him faster and as per his location whenever the user tries to
 access the static data from that application's main server.
 
-It minimizes the latency and is effective in delivering location based data to the users.
+It minimizes the latency and is effective in delivering location-based data to the users.
 
+In our case, CDN is a place where our React library is hosted and we are fetching that React, putting it into our code 
+and using it using CDN links.
+
+Using the CDN link is a way of using React in our project.
