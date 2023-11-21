@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+    <div id="root"></div>
     <!-- Here, crossorigin means that this file can interact with the files from other domains as well.-->
     <!-- These two js files contain React code that we we will be using in our project.Fcebook devs have written the React library. The first js file is the core file of react in which the react algo is written.-->
     <script
@@ -21,5 +22,19 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
+
+    <script>
+      // In this script tag, we will write our React.
+
+      // First, create an h1 tag with data 'Hello World from React' in it.It will be created using React.createElement()
+      // createElement() takes three arguments, (tagName,optionsObject,innerHtml of tag)
+      const heading = React.createElement("h1", {}, "Hello World from React!");
+
+      // Now, create the root and we will render/add all of our data in that root.It will be created using ReactDOM
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      // Now, add h1 tag to the root.
+      root.render(heading);
+    </script>
   </body>
 </html>
