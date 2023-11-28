@@ -11,22 +11,17 @@ import ReactDOM from "react-dom/client";
 // use camelCase in jsx.
 //. use () for multi lines in jsx.
 
-const HeadingComponent = () => (
+const title = <h1>This is the Title!</h1>;
+
+const headingElement = (
   <div id="container">
-    {Title}
+    {title}
     <h1> Namaste from Functional Component 🚀</h1>
   </div>
 );
 
-const Title = (
-  <h1>
-    <HeadingComponent />
-    This is the Title!
-  </h1>
-);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(Title);
+root.render(headingElement);
 // This line replaces all the elements that are previously in the root element.
 
 // Note -> A React element can be converted to a React Component in the following way.
@@ -36,7 +31,75 @@ root.render(Title);
 //  return <h1> Abhinav </h1>;
 //};
 
-// We can render element in a React element - done
-// Component in a react element - done
-// component in a component - done
-// element in a component. - done
+// 1. Component in a react element - done
+
+/*
+const HeadingComponent = () => (
+  <div id="container">
+    <h1> Namaste from Functional Component 🚀</h1>
+  </div>
+);
+
+const title = (
+  <h1>
+    This is the Title!
+    <HeadingComponent />
+  </h1>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(title);
+*/
+
+// 2. Component in a component - done
+
+/*
+const HeadingComponent = () => (
+  <div id="container">
+    <h1> Namaste from Functional Component 🚀</h1>
+  </div>
+);
+
+
+const Title = () => (
+  <h1>
+    This is the Title!
+    <HeadingComponent />
+  </h1>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Title />);
+*/
+
+// 3. Element in a component. - done
+
+/*
+const HeadingComponent = () => (
+  <div id="container">
+    {title}
+    <h1> Namaste from Functional Component 🚀</h1>
+  </div>
+);
+
+const title = <h1>This is the Title!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
+*/
+
+// 4. We can render element in a React element - done
+
+/*
+const title = <h1>This is the Title!</h1>;
+
+const headingElement = (
+  <div id="container">
+    {title}
+    <h1> Namaste from Functional Component 🚀</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(headingElement);
+*/
