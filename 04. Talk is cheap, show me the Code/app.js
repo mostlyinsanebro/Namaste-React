@@ -1752,3 +1752,7 @@ root.render(<AppLayout />);
 // not using keys <<<<<<<<<<<<< index as keys <<<<<<<< unique id (best practice)
 
 // not using index is a last resort.
+
+// Let me explain, a key is the only thing React uses to identify DOM elements. What happens if you push an item to the list
+// or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component
+// as before. But that is no longer true.
