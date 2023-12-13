@@ -1,40 +1,36 @@
-// Episode 4:- Talk is cheap, show me the code
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 /*
 // Header
- // Logo
- // Nav Items
-   // Home
-   // About
-   // Cart 
+  // Logo
+  // Nav-items
+    // Home
+    // About
+    // Cart
 // Body
   // Search
-  // CardContainer
-   // Cards
+  // Card-Container
+    // Res Cards
 // Footer
   // Copyright
   // Address
-  // About
-  // Contact Info
+  // Contact-info
 */
 
 const Header = () => {
   return (
     <div className="header">
-      <div className="logo">
+      <div className="res-logo-container">
         <img
-          className="image"
-          src="data:image/png;base64,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"
-          alt="logo-pic"
+          className="app-logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnqv3WhcmAkrbmhlr3ARNwybuGX0SLI9thuQ&usqp=CAU"
         ></img>
       </div>
       <div className="nav-items">
         <ul>
           <li>Home</li>
-          <li>About Us</li>
+          <li>About</li>
           <li>Contact Us</li>
           <li>Cart</li>
         </ul>
@@ -43,30 +39,1617 @@ const Header = () => {
   );
 };
 
-const ResCard = () => {
+const ResCard = (props) => {
+  const { resData } = props;
   return (
     <div className="res-card">
-      <img
-        className="res-img"
-        src="data:image/jpeg;base64,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"
-      ></img>
-      <h3>BMB</h3>
-      <h4>Rajsthani, North Indian, Sweets</h4>
-      <h4>Rs. 500 for two</h4>
-      <h4>20 minutes</h4>
+      <div className="res-logo">
+        <img
+          className="res-img"
+          src={
+            "https://media-assets.swiggy.com/swiggy/image/upload/" +
+            resData.data.cloudinaryImageId
+          }
+        ></img>
+      </div>
+      <h3>{resData.data.name}</h3>
+      <h4>{resData.data.cuisines.join(", ")}</h4>
+      <h4>Rs.{resData.data.costForTwo / 100} for two</h4>
+      <h4>{resData.data.avgRating} ✨</h4>
     </div>
   );
 };
+
+const resList = [
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "73011",
+      name: "Dindigul Thalappakatti",
+      uuid: "27ff4155-fe46-418e-9862-ab98953bf953",
+      city: "22",
+      area: "Anand Vihar Colony",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "w0fc1sr85flnqzb7qhma",
+      cuisines: ["South Indian", "Snacks", "Biryani"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 6.199999809265137,
+      slugs: {
+        restaurant: "kfc-chukkuwala-chukkuwala",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "KFC Restaurant, Khasra No 1281/1291, Opp Dr Manish Jain hospital, Chakrata road, Dehradun-248001",
+      locality: "Clock Tower",
+      parentId: 547,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=5698075~p=1~eid=00000185-8b09-7c92-0e51-a04b00dc0124",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.1 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "73011",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 6.199999809265137,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.0",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "5421325",
+      name: "Copper Kitchen",
+      uuid: "f2ee37f5-9ab0-4903-9420-6cae020b0a38",
+      city: "22",
+      area: "Majra    Bansal Home",
+      totalRatingsString: "50+ ratings",
+      cloudinaryImageId: "ousftkkaojw0itx4u3tw",
+      cuisines: [
+        "North Indian",
+        "South Indian",
+        "Fast Food",
+        "Snacks",
+        "Beverages",
+      ],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 33,
+      minDeliveryTime: 33,
+      maxDeliveryTime: 33,
+      slaString: "33 MINS",
+      lastMileTravel: 0.6000000238418579,
+      slugs: {
+        restaurant: "domnik-pizza-patel-nagar-patel-nagar-2",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "28/3 Sewala Chandravani Road, Arcedia Grant, Dehradun Rural, Dehradun, Uttarakhand",
+      locality: "Patel Nagar",
+      parentId: 22321,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.6 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "542132",
+        deliveryTime: 33,
+        minDeliveryTime: 33,
+        maxDeliveryTime: 33,
+        lastMileTravel: 0.6000000238418579,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "2.8",
+      totalRatings: 50,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "3215170",
+      name: "Banana Leaf",
+      uuid: "899d5dd4-200a-48b2-a321-391bb9486ec2",
+      city: "22",
+      area: "Majra",
+      totalRatingsString: "50+ ratings",
+      cloudinaryImageId: "v7msadjrhhu6p1dbg29l",
+      cuisines: ["Indian", "Chinese", "Tandoor", "Thalis", "Fast Food"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 0.699999988079071,
+      slugs: {
+        restaurant: "food-planet-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "157/11, Chandra Parisar Chandra Bani Rd, Ekta Enclave, Doon Enclave, Majra, Dehradun, Uttarakhand 248171",
+      locality: "Patel Nagar",
+      parentId: 81850,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.6 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "321517",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 0.699999988079071,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.8",
+      totalRatings: 50,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "311800",
+      name: "Kati Roll Shop",
+      uuid: "162a4dc4-50de-452a-82cf-751e18ac9952",
+      city: "22",
+      area: "Anand Vihar Colony",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "oy37srywtgi89uynbb4v",
+      cuisines: ["North Indian", "Snacks"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 39,
+      minDeliveryTime: 39,
+      maxDeliveryTime: 39,
+      slaString: "39 MINS",
+      lastMileTravel: 6.300000190734863,
+      slugs: {
+        restaurant: "burger-king-chakrata-road-ballupur",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "5/5,4/4 & 3/3, GROUND FLOOR, CHAKRATA ROAD, DEHRADUN, UTTRAKHAND",
+      locality: "CHAKRATA ROAD",
+      parentId: 166,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "60% off",
+        shortDescriptionList: [
+          {
+            meta: "60% off | Use STEALDEAL",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "60% off up to ₹120 | Use code STEALDEAL",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "60% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use STEALDEAL",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "60% off up to ₹120 | Use code STEALDEAL",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=5700193~p=4~eid=00000185-8b09-7c92-0e51-a04c00dc0405",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.3 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "311806",
+        deliveryTime: 39,
+        minDeliveryTime: 39,
+        maxDeliveryTime: 39,
+        lastMileTravel: 6.300000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.2",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "132460",
+      name: "Annapurna Andhra Mess",
+      uuid: "c6460418-904b-4371-9e04-0ce8b1b46cae",
+      city: "22",
+      area: "Dehradun",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "mnjmlphk3sefop8tzo5i",
+      cuisines: ["South Indian", "Biryani", "North Indian"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 1.399999976158142,
+      slugs: {
+        restaurant: "annapurna-andhra-mess-subhash-nagar-subhash-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "keshav enclave sewla khurd chandrabani road behind uttranchal PG college",
+      locality: "Patel Nagar",
+      parentId: 33997,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.3 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "132460",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 1.399999976158142,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "196677",
+      name: "Firangi Bake",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "ivsvlekfebsbqmtmni3h",
+      cuisines: ["North Indian", "Snacks", "Beverages", "Desserts"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.2",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "296677",
+      name: "Drunken Monkey",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "2d0c902eb2975b651d78e566bd8d06be",
+      cuisines: ["Juices", "Snacks", "Beverages", "Desserts"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.2",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "416677",
+      name: "Sri Sampoorna Veg Restaurant",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "yv55fex41rwx0mtlt16q",
+      cuisines: ["South Indian", "North Indian", "Snacks", "Beverages"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "2.9",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "396677",
+      name: "Silver Fish",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "ix9re2vh7mzu2bynrdhx",
+      cuisines: ["South Indian", "Non Veg", "Snacks", "Beverages"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "496077",
+      name: "Udhayam Juice Shop",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "ox2wtrnxa7iakfefckoy",
+      cuisines: ["South Indian", "North Indian", "Snacks", "Beverages"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.4",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "4962677",
+      name: "Writer's Cafe",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "njtmfslhi2dbosvnssar",
+      cuisines: ["North Indian", "Snacks", "Beverages", "Desserts"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "2.5",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "4961677",
+      name: "Paste Factory",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "tqpyeoahq0hqfixzkrcm",
+      cuisines: ["Desserts", "North Indian", "Snacks", "Beverages"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.7",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "496377",
+      name: "Sweet Tooth",
+      uuid: "e652ab57-22c2-4226-b5ea-a5caa26ee0f8",
+      city: "22",
+      area: "Patel Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "7c51efd1c5a12b7925e428a87977f85d",
+      cuisines: ["Cakes", "Snacks", "Desserts"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "uncle-ji-restaurant-patel-nagar-patel-nagar",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address: "348 santosh tower, majra road gram majra dehradun 248001",
+      locality: "Patel Nagar",
+      parentId: 298209,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "50% off",
+        shortDescriptionList: [
+          {
+            meta: "50% off | Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "50% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "50% off up to ₹100 | Use code WELCOME50",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      chain: [],
+      feeDetails: {
+        fees: [],
+        totalFees: 0,
+        message: "",
+        title: "",
+        amount: "",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "496677",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 0,
+      new: false,
+    },
+    subtype: "basic",
+  },
+];
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">
-        <h3>Search</h3>
+        <h2>Search</h2>
       </div>
-      <div className="res-Container">
-        <ResCard />
-        <ResCard />
+      <div className="res-container">
+        <ResCard resData={resList[0]} />
+        <ResCard resData={resList[1]} />
+        <ResCard resData={resList[2]} />
+        <ResCard resData={resList[3]} />
+        <ResCard resData={resList[4]} />
+        <ResCard resData={resList[5]} />
+        <ResCard resData={resList[6]} />
+        <ResCard resData={resList[7]} />
+        <ResCard resData={resList[8]} />
+        <ResCard resData={resList[9]} />
+        <ResCard resData={resList[10]} />
+        <ResCard resData={resList[11]} />
       </div>
     </div>
   );
@@ -80,6 +1663,6 @@ const AppLayout = () => {
     </div>
   );
 };
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(<AppLayout />);
