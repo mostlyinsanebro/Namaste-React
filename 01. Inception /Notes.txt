@@ -1,5 +1,6 @@
 What is a CDN?
 
+
 CDN stands for content delivery network which is basically used for storing the static data of an application
 to the nearby Cache's of a user and then deliver the data to him faster and as per his location whenever the user tries to
 access the static data from that application's main server.
